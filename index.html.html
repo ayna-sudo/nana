@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Neon Runner 2D</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="game-container">
+    <!-- Game Canvas -->
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <!-- Canvas HUD Layer -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="stat-box">
+          <span class="stat-label">SKOR</span>
+          <span id="scoreText" class="stat-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">SYILING</span>
+          <span id="coinsText" class="stat-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">TERTINGGI</span>
+          <span id="highScoreHUD" class="stat-value">0</span>
+        </div>
+      </div>
+      <div id="powerup-bars"></div>
+    </div>
+
+    <!-- Screen Overlays -->
+    <!-- Start Screen -->
+    <div id="startScreen" class="overlay">
+      <h1 class="title">NEON RUNNER</h1>
+      <p class="subtitle">Lari, elak halangan & kumpul syiling!</p>
+      
+      <div class="controls-guide">
+        <div class="key-row">
+          <span class="key">Space</span> / <span class="key">▲</span> : Lompat (Tekan 2x untuk Double Jump)
+        </div>
+        <div class="key-row">
+          <span class="key">▼</span> : Menunduk / Itik
+        </div>
+      </div>
+
+      <button id="startBtn" class="btn">MULA PERMAINAN</button>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="overlay hidden">
+      <h2 class="title red">GAME OVER</h2>
+      
+      <div class="score-summary">
+        <div class="res-row">
+          <span>Skor Akhir:</span>
+          <strong id="finalScore">0</strong>
+        </div>
+        <div class="res-row">
+          <span>Syiling Dikutip:</span>
+          <strong id="finalCoins">0</strong>
+        </div>
+        <div class="res-row highlight">
+          <span>Rekod Tertinggi:</span>
+          <strong id="finalHighScore">0</strong>
+        </div>
+      </div>
+
+      <button id="restartBtn" class="btn">MAIN LAGI</button>
+    </div>
+
+    <!-- Sound Toggle -->
+    <button id="soundBtn" class="icon-btn">🔊</button>
+
+    <!-- Mobile Controls -->
+    <div id="touch-controls">
+      <button id="touchDuck" class="touch-btn">▼ TUNDUK</button>
+      <button id="touchJump" class="touch-btn">▲ LOMPAT</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
